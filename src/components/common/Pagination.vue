@@ -1,12 +1,19 @@
 <template>
-  <div class="pager-container">
-    <button class="btn btn-pager" :disabled="this.current == 1" @click="prePage">上一页</button>
-    <span v-if="pageNo !== 1" class="page-index {{ 1 == current ? 'active':''}}" @click="goPage(1)">1</span>
-    <span v-if="preClipped" class="page-index">...</span>
-    <span v-for="index in pages" class="page-index {{ index == current ? 'active':''}} " @click="goPage(index)">{{index}}</span>
-    <span v-if="backClipped" class="page-index">...</span>
-    <span class="page-index {{ pageNo == current ? 'active':''}} " @click="goPage(pageNo)">{{pageNo}}</span>
-    <button class="btn btn-pager" :disabled="this.current == pageNo" @click="nextPage">下一页</button>
+  <div :class="[bigWidth?'text-right':'text-center']">
+    <div class="pager-container">
+      <button class="btn btn-pager" :disabled="this.current == 1" @click="prePage">上一页</button>
+      <div class="pager-box" v-if="bigWidth">
+        <span v-if="pageNo !== 1" :class="[ 1 == current ? 'active':'','page-index']" @click="goPage(1)">1</span>
+        <span v-if="preClipped" class="page-index">...</span>
+        <span v-for="index in pages" :class="[ index == current ? 'active':'','page-index']" @click="goPage(index)">{{index}}</span>
+        <span v-if="backClipped" class="page-index">...</span>
+        <span :class=" [ pageNo == current ? 'active':'','page-index']" @click="goPage(pageNo)">{{pageNo}}</span>
+      </div>
+      <div class="pager-box" v-if="!bigWidth">
+        <p>{{current}}/{{pageNo}}</p>
+      </div>
+      <button class="btn btn-pager" :disabled="this.current == pageNo" @click="nextPage">下一页</button>
+    </div>
   </div>
 </template>
 <script>
@@ -26,11 +33,17 @@ export default {
   data: function () {
     return {
       // 用于判断省略号是否显示
-      backClipped: true, 
-      preClipped: false
+      backClipped: true,
+      preClipped: false,
+      bigWidth:true,
     }
   },
-  ready() {
+  created() {
+    let windowScreen = window.innerWidth
+    console.log(windowScreen)
+    if (windowScreen<420) {
+      this.bigWidth=false
+    }
   },
   methods: {
     prePage () {
@@ -87,10 +100,10 @@ export default {
   }
 }
 </script>
-<style scoped lang="LESS">
+<style scoped>
 .pager-container {
-  text-align: center;
-  margin-top:25px;
+  /* text-align: center; */
+  margin:40px 0;
 }
 .btn-pager {
   margin:0 10px;
@@ -99,14 +112,10 @@ export default {
   width: 60px;
   height: 25px;
   text-align: center;
-  background-color: #dadada;
+  background-color: #edf3f5;
   color: #000000;
-  border: 1px solid #e3e3e3;
   border-radius: 2px;
   -webkit-border-radius: 2px;
-}
-.btn-pager:hover {
-  background-color: #f2f2f2;
 }
 .page-index {
   display: inline-block;
@@ -120,6 +129,24 @@ export default {
 }
 .active {
   color: #ffffff;
-  background-color: #3498db;
+  background-color: #34b8de;
+}
+.pager-box{
+  display: inline-block;
+}
+/* 移动端样式调节 */
+@media screen and (max-width: 420px) {
+.btn-pager {
+  margin:0 10px;
+  font-size: 1.4rem;
+  padding: 0px;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  background-color: #edf3f5;
+  color: #000000;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
 }
 </style>

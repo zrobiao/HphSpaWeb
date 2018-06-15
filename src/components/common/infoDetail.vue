@@ -27,7 +27,6 @@
 import router from '../../router/index.js'
 export default {
   created() {
-    console.log(this.$route.query);
     this.$store.state.flag = this.$route.query.flag
     document.title="详细信息"
   },

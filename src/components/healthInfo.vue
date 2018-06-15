@@ -10,7 +10,7 @@
       </div> -->
       <div class="container">
         <ul class="row">
-          <li class="col-lg-4 col-md-4 col-xs-6">
+          <li class="col-lg-4 col-md-4 col-xs-12">
             <div class="info-bigbox">
               <div class="info-iconbox">
                 <i class="iconfont" style="color:#eccf88">&#xe602;</i>
@@ -18,7 +18,7 @@
               <h4>体检服务</h4>
             </div>
           </li>
-          <li class="col-lg-4 col-md-4 col-xs-6">
+          <li class="col-lg-4 col-md-4 col-xs-12">
             <div class="info-bigbox">
               <div class="info-iconbox">
                 <i class="iconfont" style="color:#85bcff">&#xe69f;</i>
@@ -26,7 +26,7 @@
               <h4>电子档案</h4>
             </div>
           </li>
-          <li class="col-lg-4 col-md-4 col-xs-6">
+          <li class="col-lg-4 col-md-4 col-xs-12">
             <div class="info-bigbox">
               <div class="info-iconbox">
                 <i class="iconfont" style="color:#85bcff">&#xe68e;</i>
@@ -34,7 +34,7 @@
               <h4>国内专家</h4>
             </div>
           </li>
-          <li class="col-lg-4 col-md-4 col-xs-6">
+          <li class="col-lg-4 col-md-4 col-xs-12">
             <div class="info-bigbox">
               <div class="info-iconbox">
                 <i class="iconfont" style="color:#80d855">&#xe603;</i>
@@ -42,7 +42,7 @@
               <h4>基因测序</h4>
             </div>
           </li>
-          <li class="col-lg-4 col-md-4 col-xs-6">
+          <li class="col-lg-4 col-md-4 col-xs-12">
             <div class="info-bigbox">
               <div class="info-iconbox">
                 <i class="iconfont" style="color:#80d855">&#xe621;</i>
@@ -50,7 +50,7 @@
               <h4>国际医疗通道</h4>
             </div>
           </li>
-          <li class="col-lg-4 col-md-4 col-xs-6">
+          <li class="col-lg-4 col-md-4 col-xs-12">
             <div class="info-bigbox">
               <div class="info-iconbox">
                 <i class="iconfont" style="color:#f98a8a">&#xe61e;</i>
@@ -84,7 +84,10 @@ export default {
 .top-banner {
   width: 100%;
   height: 300px;
-  position: relative;
+  display:flex;
+  display:-webkit-flex;
+  justify-content: center;
+  align-items: center;
 }
 .top-banner img {
   width: 100%;
@@ -106,7 +109,7 @@ export default {
 }
 .info-bigbox {
   width: 80%;
-  margin: 0 auto 20px;
+  margin: 0 auto 40px;
   text-align: center;
   padding: 15px;
   box-shadow: 0 0 4px rgba(70, 109, 122, 0.4);
@@ -130,5 +133,22 @@ export default {
   color: #34b8de;
   text-align: center;
   padding: 20px 0 0;
+}
+/* 移动端样式调节 */
+@media screen and (max-width: 420px) {
+.top-banner {
+  width: 100%;
+  height: 200px;
+}
+.top-banner img {
+  width: auto;
+  height: 100%;
+}
+.info-bigbox {
+  width: 100%;
+  margin: 0 auto 40px;
+  text-align: center;
+  padding: 15px;
+}
 }
 </style>

@@ -51,9 +51,14 @@ export default {
     }
   },
   created() {
-    setTimeout(() => {
-      this.showLstHeight()
-    }, 500)
+    let documentwidth = window.innerWidth
+    if(documentwidth<760){
+      this.footerLtH=200
+    }else{
+      setTimeout(() => {
+        this.showLstHeight()
+      }, 500)
+    }
     },
   mounted() {
   },
@@ -111,5 +116,24 @@ footer {
   padding:8px 0;
   font-size: 1.2rem;
   margin:0;
+}
+/* 移动端样式调节 */
+@media screen and (max-width: 420px) {
+.compinfo h2{
+  font-size:2rem;
+  margin:0;
+  padding:10px 0;
+}
+.compinfo p{
+  font-size: 1.4rem;
+  margin:0;
+  padding-bottom:6px;
+}
+.footer-bottom{
+  background: #263643
+}
+.footer-bottom p{
+  line-height: 1.2rem;
+}
 }
 </style>

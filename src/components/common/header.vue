@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="navbar-fixed-top">
     <navbar class="container hph-navbar">
       <a class="navbar-brand logo-link" slot="brand" href="index.html">
         <img src="../../assets/logo.png" class="img-responsive">
@@ -42,6 +42,9 @@ export default {
 <style>
 header{
   border-bottom:1px solid #e5e5e5;
+  width:100%;
+  height: 53px;
+  background: #fff;
 }
 .hph-navbar{
   background: #fff;

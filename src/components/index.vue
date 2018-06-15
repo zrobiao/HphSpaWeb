@@ -4,7 +4,7 @@
       <carousel :indicators="indicators" :controls="controls" :interval="interval" ref="carousel">
         <slide v-for="(slide, index) in slides" :key="index">
           <div style="width: 100%;" class="slider-box">
-            <img :src="slide.src" class="img-responsive">
+            <img :src="slide.src">
           </div>
         </slide>
         <template slot="indicators" slot-scope="props">
@@ -22,13 +22,15 @@
         <p></p>
       </div>
       <ul class="content row">
-        <li class="col-lg-3 col-md-3 col-xs-6">
+        <li class="col-lg-3 col-md-3 col-xs-12">
           <div class="index-libox">
-            <div class="icon-box"><i class="iconfont hph-ali-icon1"></i></div>
+            <div class="icon-box">
+              <i class="iconfont hph-ali-icon1"></i>
+            </div>
             <p>专业服务<br/>培训上岗&nbsp;&nbsp;经验丰富</p>
           </div>
         </li>
-        <li class="col-lg-3 col-md-3 col-xs-6">
+        <li class="col-lg-3 col-md-3 col-xs-12">
           <div class="index-libox">
             <div class="icon-box">
               <i class="iconfont hph-ali-resource"></i>
@@ -36,7 +38,7 @@
             <p>八大资源<br/>五星服务&nbsp;&nbsp;为您护航</p>
           </div>
         </li>
-        <li class="col-lg-3 col-md-3 col-xs-6">
+        <li class="col-lg-3 col-md-3 col-xs-12">
           <div class="index-libox">
             <div class="icon-box">
               <i class="iconfont hph-ali-zyfw"></i>
@@ -44,7 +46,7 @@
             <p>多元化服务<br/>五星服务&nbsp;&nbsp;海量护工</p>
           </div>
         </li>
-        <li class="col-lg-3 col-md-3 col-xs-6">
+        <li class="col-lg-3 col-md-3 col-xs-12">
           <div class="index-libox">
             <div class="icon-box">
               <i class="iconfont hph-ali-anquan"></i>
@@ -55,7 +57,7 @@
       </ul>
     </section>
     <section class="index-middle" ref="indexMiddle">
-      <div class="container" :style="{height:middleHeight+'px',lineHeight:middleHeight+'px'}">专业级的护工给你提供更加优质的护理服务……</div>
+      <div class="container">专业级的护工给你提供更加优质的护理服务……</div>
     </section>
     <section class="container">
       <ul class="content row">
@@ -136,9 +138,9 @@ export default {
       interval: 0,
       indicators: true,
       controls: false,
-      bigHeight:0,
-      smallHeight:0,
-      middleHeight:0,
+      bigHeight: 0,
+      smallHeight: 0,
+      middleHeight: 0,
       slides: [
         {
           title: "滑动1",
@@ -147,43 +149,44 @@ export default {
       ]
     };
   },
-  methods:{
-
-  },
+  methods: {},
   created() {
     this.$store.state.flag = 0;
-    document.title = '好陪护'
+    document.title = "好陪护";
   },
   mounted() {
-    let nursWidth = this.$refs.bignurs.offsetWidth
-    let smNursWidth = this.$refs.smallnurs.offsetWidth
-    let indexMiddleWidth = this.$refs.indexMiddle.offsetWidth
-    this.middleHeight = indexMiddleWidth/10
-    this.bigHeight = nursWidth/1.25
-    this.smallHeight = smNursWidth/2.6
+    let nursWidth = this.$refs.bignurs.offsetWidth;
+    let smNursWidth = this.$refs.smallnurs.offsetWidth;
+    // let indexMiddleWidth = this.$refs.indexMiddle.offsetWidth;
+    // this.middleHeight = indexMiddleWidth / 10;
+    this.bigHeight = nursWidth / 1.25;
+    this.smallHeight = smNursWidth / 2.6;
   }
 };
 </script>
 
 <style>
 /* slides样式 */
-.slider-box{
-  padding-bottom:26%;
+.slider-box {
+  height: 500px;
+  display:flex;
+  display:-webkit-flex;
+  justify-content: center;
+  align-items: center;
 }
-.slider-box img{
-  position: absolute;
-  top:0;
-  left:0;
+.slider-box img {
+  height: 100%;
+  width:auto;
 }
-.custom-carousel-indicators li{
+.custom-carousel-indicators li {
   margin: 0 8px;
   border-radius: 50%;
-  border:none;
+  border: none;
   background: #fff;
   width: 15px;
   height: 15px;
 }
-.custom-carousel-indicators .active{
+.custom-carousel-indicators .active {
   border-radius: 50%;
   margin: 0 8px;
   width: 15px;
@@ -191,129 +194,152 @@ export default {
   background: #34b8de;
 }
 /* 我们的优势样式 */
-.index-titlebox{
-  width:100%;
+.index-titlebox {
+  width: 100%;
   text-align: center;
-  padding:12px 0 8px;
+  padding: 12px 0 8px;
 }
-.index-titlebox h4{
+.index-titlebox h4 {
   font-size: 1.8rem;
-  color:#525252;
+  color: #525252;
   line-height: 2rem;
-  margin:8px 0;
+  margin: 8px 0;
 }
-.index-titlebox p{
-  width:50px;
-  height:2px;
+.index-titlebox p {
+  width: 50px;
+  height: 2px;
   background: #34b8de;
-  margin:0 auto;
+  margin: 0 auto;
 }
-.content{
-  padding:12px 0;
-  margin:20px 0 30px;
+.content {
+  padding: 12px 0;
+  margin: 20px 0 30px;
 }
-.index-libox{
+.content li{
+  margin-bottom:20px;
+}
+.index-libox {
   background: #f3f7fa;
   border-radius: 4px;
 }
-.index-libox:hover{
+.index-libox:hover {
   background: #34b8de;
-  box-shadow:0 0 5px rgba(52, 184, 222, 0.8);
-  -webkit-box-shadow:0 0 5px rgba(52, 184, 222, 0.8);
-  -moz-box-shadow:0 0 5px rgba(52, 184, 222, 0.8);
-  -ms-box-shadow:0 0 5px rgba(52, 184, 222, 0.8);
-  -o-box-shadow:0 0 5px rgba(52, 184, 222, 0.8);
+  box-shadow: 0 0 5px rgba(52, 184, 222, 0.8);
+  -webkit-box-shadow: 0 0 5px rgba(52, 184, 222, 0.8);
+  -moz-box-shadow: 0 0 5px rgba(52, 184, 222, 0.8);
+  -ms-box-shadow: 0 0 5px rgba(52, 184, 222, 0.8);
+  -o-box-shadow: 0 0 5px rgba(52, 184, 222, 0.8);
   transform: scale(1.1);
   -ms-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -o-transform: scale(1.1);
   -moz-transform: scale(1.1);
 }
-.index-libox:hover .icon-box, .index-libox:hover p{
+.index-libox:hover .icon-box,
+.index-libox:hover p {
   color: #fff;
 }
-.icon-box{
+.icon-box {
   color: #34b8de;
   text-align: center;
   padding: 12px 0;
 }
-.icon-box i{
+.icon-box i {
   font-size: 6rem;
 }
-.index-libox p{
+.index-libox p {
   text-align: center;
-  color:#525252;
+  color: #525252;
   line-height: 2.8rem;
   font-size: 2rem;
   padding: 8px 0 15px;
 }
 /* 中间banner */
-.index-middle{
-  position: relative;
-  background: url(./../../static/img/index_middle.jpg) 0 0 no-repeat;
-  /* background: #34b8de; */
+.index-middle {
+  height: 200px;
+  background: url(./../../static/img/index_middle.jpg) center no-repeat;
 }
-.index-middle div{
-  font-size:2rem;
-  color:#fff;
+.index-middle div {
+  font-size: 2rem;
+  color: #fff;
+  line-height: 200px;
 }
 /* 护工介绍 */
-.nurs-wokerbox{
+.nurs-wokerbox {
   position: relative;
 }
-.nurs-wokerbox h6{
+.nurs-wokerbox h6 {
   background: #34b8de;
   padding: 10px 8px;
   border-radius: 5px;
   /* margin-bottom: 15px; */
-  color:#fff;
+  color: #fff;
   font-size: 1.6rem;
   text-align: center;
 }
-.nurs-wokerbox p{
+.nurs-wokerbox p {
   font-size: 1.4rem;
-  color:#fff;
-  margin:0;
+  color: #fff;
+  margin: 0;
 }
-.nurs-ziy,.nurs-hail,.nurs-jiam{
-  position:absolute;
-  left:30px;
-  bottom:20px;
+.nurs-ziy,
+.nurs-hail,
+.nurs-jiam {
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
 }
-.nurs-zybg{
-  background: url(./../../static/img/index_worker01.jpg) 0 0 no-repeat;
+.nurs-zybg {
+  background: url(./../../static/img/index_worker01.jpg) center no-repeat;
 }
-.nurs-hlbg{
-  background: url(./../../static/img/index_worker02.jpg) 0 0 no-repeat;
+.nurs-hlbg {
+  background: url(./../../static/img/index_worker02.jpg) center no-repeat;
 }
-.nurs-jmbg{
-  background: url(./../../static/img/index_worker03.jpg) 0 0 no-repeat;
+.nurs-jmbg {
+  background: url(./../../static/img/index_worker03.jpg) center no-repeat;
 }
 /* 便捷入口 */
-.ent-content{
-  background:#edf3f5;
+.ent-content {
+  background: #edf3f5;
 }
-.ent-libox h3{
+.ent-libox h3 {
   text-align: center;
   font-weight: 700;
   color: #525252;
-  margin:0;
+  margin: 0;
 }
-.app-icon{
-  color:#34b8de;
+.app-icon {
+  color: #34b8de;
 }
-.wx-icon{
-  color:#00994d;
+.wx-icon {
+  color: #00994d;
 }
-.phone-icon{
-  color:#c35251;
+.phone-icon {
+  color: #c35251;
 }
-.ent-libox p{
+.ent-libox p {
   text-align: center;
-  color:#525252;
+  color: #525252;
   line-height: 2.2rem;
   font-size: 1.6rem;
   padding: 8px 0 15px;
-  margin-top:30px;
+  margin-top: 30px;
+}
+/* 移动端样式调节 */
+@media screen and (max-width: 420px) {
+  .slider-box {
+    height: 300px;
+  }
+  /* 中间banner */
+.index-middle {
+  height: 100px;
+  background: url(./../../static/img/index_middle.jpg) center no-repeat;
+  /* background: #34b8de; */
+}
+.index-middle div {
+  font-size: 1.6rem;
+  color: #fff;
+  line-height: 100px;
+}
 }
 </style>

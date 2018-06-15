@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header menu-title="首页"></Header>
+    <Header></Header>
     <router-view/>
     <Footer></Footer>
   </div>
@@ -20,6 +20,8 @@ export default {
   },
 }
 </script>
-
 <style>
+#app{
+  padding-top:53px;
+}
 </style>

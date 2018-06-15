@@ -26,27 +26,37 @@
           </div>
         </li>
       </ul>
+      <page-nation :page-no="10" :current.sync="currentPage"></page-nation>
     </section>
   </div>
 </template>
 
 <script>
 import router from '../router/index.js'
+import PageNation from './common/Pagination.vue'
 export default {
   name: "app",
-  components: {},
+  components: {PageNation},
   created() {
     this.$store.state.flag = 2;
     document.title = '资讯'
+    this.requstData()
+  },
+  watch:{
+    currentPage:'requstData'
   },
   data() {
     return {
-      msg: "这里是资讯列表！"
+      msg: "这里是资讯列表！",
+      currentPage:1,
     };
   },
   methods:{
     go:function(url,flag,data){
       router.push({ path: url, query: {flag:flag,id:data }})
+    },
+    requstData:function () {
+      //这里从后台获取到当前页码
     }
   },
 };
@@ -55,7 +65,10 @@ export default {
 .top-banner {
   width: 100%;
   height: 300px;
-  position: relative;
+  display:flex;
+  display:-webkit-flex;
+  justify-content: center;
+  align-items: center;
 }
 .top-banner img {
   width: 100%;
@@ -93,5 +106,22 @@ export default {
 }
 .list-bottom p {
   color: #ccc;
+}
+/* 移动端样式调节 */
+@media screen and (max-width: 420px) {
+.top-banner {
+  width: 100%;
+  height: 200px;
+}
+.top-banner img {
+  width: auto;
+  height: 100%;
+}
+.info-bigbox {
+  width: 100%;
+  margin: 0 auto 40px;
+  text-align: center;
+  padding: 15px;
+}
 }
 </style>

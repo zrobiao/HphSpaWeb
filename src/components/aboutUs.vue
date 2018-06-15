@@ -144,7 +144,10 @@ export default {
 .top-banner {
   width: 100%;
   height: 300px;
-  position: relative;
+  display:flex;
+  display:-webkit-flex;
+  justify-content: center;
+  align-items: center;
 }
 .top-banner img {
   width: 100%;
@@ -277,5 +280,22 @@ export default {
   font-size: 2.2rem;
   color:#ff4e00;
   padding:0 6px;
+}
+/* 移动端样式调节 */
+@media screen and (max-width: 420px) {
+.top-banner {
+  width: 100%;
+  height: 200px;
+}
+.top-banner img {
+  width: auto;
+  height: 100%;
+}
+.info-bigbox {
+  width: 100%;
+  margin: 0 auto 40px;
+  text-align: center;
+  padding: 15px;
+}
 }
 </style>
