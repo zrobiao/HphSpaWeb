@@ -70,7 +70,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 footer {
   background: #3b4a55;
   color: #fff;

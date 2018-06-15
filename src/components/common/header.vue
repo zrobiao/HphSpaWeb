@@ -39,7 +39,7 @@ export default {
   components: {},
 }
 </script>
-<style>
+<style scoped>
 header{
   border-bottom:1px solid #e5e5e5;
   width:100%;

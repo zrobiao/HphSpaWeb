@@ -165,7 +165,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* slides样式 */
 .slider-box {
   height: 500px;
