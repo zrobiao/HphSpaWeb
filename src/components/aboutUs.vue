@@ -22,25 +22,25 @@
       </div>
       <div class="container">
         <ul class="row about-cultrue">
-          <li class="col-lg-3 col-md-3 col-xs-6 c-number">
+          <li class="col-lg-3 col-md-3 col-xs-12 c-number">
             <div class="about-liimgbox">
               <i class="iconfont">&#xe6a7;</i>
             </div>
             <p>建立了一个专业的网络护理平台，使客户能享受到更便捷、舒适、贴心的服务</p>
           </li>
-          <li class="col-lg-3 col-md-3 col-xs-6 e-number">
+          <li class="col-lg-3 col-md-3 col-xs-12 e-number">
             <p>专职、专业培训师，专业服务团队，带给客户家人般关爱的同时帮助客户早日康复是公司服务的宗旨</p>
             <div class="about-liimgbox">
               <i class="iconfont">&#xe6a8;</i>
             </div>
           </li>
-          <li class="col-lg-3 col-md-3 col-xs-6 c-number">
+          <li class="col-lg-3 col-md-3 col-xs-12 c-number">
             <div class="about-liimgbox">
               <i class="iconfont">&#xe6a9;</i>
             </div>
             <p>为住院患者提供优质、高效、专业的陪护服务</p>
           </li>
-          <li class="col-lg-3 col-md-3 col-xs-6 e-number">
+          <li class="col-lg-3 col-md-3 col-xs-12 e-number">
             <p>快康公司视员工为公司最重要的部分，为员工提供的不仅仅是吸引力强的薪资，还有新技能和获得新的资质以及公司管理层晋升机会</p>
             <div class="about-liimgbox">
               <i class="iconfont">&#xe6aa;</i>
@@ -296,6 +296,17 @@ export default {
   margin: 0 auto 40px;
   text-align: center;
   padding: 15px;
+}
+.about-cultrue li {
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.about-cultrue li p {
+  font-size: 1.4rem;
+  color: #fff;
+  line-height: 1.8rem;
+  text-align: center;
+  height: 100px;
 }
 }
 </style>
