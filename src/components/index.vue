@@ -35,7 +35,7 @@
             <div class="icon-box">
               <i class="iconfont hph-ali-resource"></i>
             </div>
-            <p>八大资源<br/>五星服务&nbsp;&nbsp;为您护航</p>
+            <p>六大资源<br/>全面服务&nbsp;&nbsp;为您护航</p>
           </div>
         </li>
         <li class="col-lg-3 col-md-3 col-xs-12">
@@ -43,7 +43,7 @@
             <div class="icon-box">
               <i class="iconfont hph-ali-zyfw"></i>
             </div>
-            <p>多元化服务<br/>五星服务&nbsp;&nbsp;海量护工</p>
+            <p>五星陪护<br/>海量护工&nbsp;&nbsp;五星服务</p>
           </div>
         </li>
         <li class="col-lg-3 col-md-3 col-xs-12">
@@ -57,29 +57,29 @@
       </ul>
     </section>
     <section class="index-middle" ref="indexMiddle">
-      <div class="container">专业级的护工给你提供更加优质的护理服务……</div>
+      <div class="container">好陪护&nbsp;&nbsp;&nbsp;陪护好&nbsp;&nbsp;&nbsp;找护工就上好陪护……</div>
     </section>
     <section class="container">
       <ul class="content row">
         <li class="col-lg-6 col-md-6 col-xs-12">
           <div class="nurs-wokerbox nurs-zybg" ref="bignurs" :style="{height:bigHeight+'px'}">
             <div class="nurs-ziy">
-              <h6>自营护工</h6>
-              <p>专业培训、舒适培训</p>
+              <h6>直营护工</h6>
+              <p>更专业、更舒心</p>
             </div>
           </div>
         </li>
         <li class="col-lg-6 col-md-6 col-xs-12">
           <div class="nurs-wokerbox nurs-hlbg" ref="smallnurs" :style="{height:smallHeight+'px'}" style="margin-bottom:15px;">
             <div class="nurs-hail">
-              <h6>海量护工</h6>
+              <h6>共享护工</h6>
               <p>共享服务、方便你我</p>
             </div>
           </div>
           <div class="nurs-wokerbox nurs-jmbg" ref="smallnurs" :style="{height:smallHeight+'px'}">
             <div class="nurs-jiam">
-              <h6>加盟护工</h6>
-              <p>专业、专注、专项</p>
+              <h6>第三方护工</h6>
+              <p>专品质服务、健康陪护</p>
             </div>
           </div>
         </li>

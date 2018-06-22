@@ -9,7 +9,7 @@
         <p></p>
       </div>
       <div class="container about-infobox">
-        <p>深圳市快康网络技术有限公司是一家基于互联网的护理服务公司，好陪护是公司开发的医院护理产品。公司旨在对护理有需求的客户，提供“以人为中心”，最适合的专业护理服务。快康好陪护建立统一的准入门槛、执业标准和执业规范以及健全的培训体系和监督考评体系，让病患及家属拥有健康身心。</p>
+        <p>深圳市快康网络技术有限公司成立于2016年初，是全国最早从事护理行业互联网+的公司之一。<br>公司自主打造的“好陪护”平台旨在对客户提供更便捷、更舒适、更贴心、更专业的护理服务。同时，公司给加盟护工提供职业培训以及更好的工作机会。</p>
         <div class="about-imgbanner">
           <img src="../assets/aboutUs_middle.jpg" class="img-responsive">
         </div>
@@ -26,10 +26,12 @@
             <div class="about-liimgbox">
               <i class="iconfont">&#xe6a7;</i>
             </div>
-            <p>建立了一个专业的网络护理平台，使客户能享受到更便捷、舒适、贴心的服务</p>
+            <h5>价值观</h5>
+            <p>好陪护，陪护好！公司致力于打造开放的“好陪护”服务平台，给用户提供最优质的护理服务；保障护工群体利益，提升护工群体价值及社会认同感。</p>
           </li>
           <li class="col-lg-3 col-md-3 col-xs-12 e-number">
-            <p>专职、专业培训师，专业服务团队，带给客户家人般关爱的同时帮助客户早日康复是公司服务的宗旨</p>
+            <h5>愿景</h5>
+            <p>老龄化正在成为我国社会主特征之一，公司提供专业的培训，帮助从业人员取得从业资格，致力于树立行业规范，缓解社会家庭压力，为公共卫生事业做出有效的贡献。</p>
             <div class="about-liimgbox">
               <i class="iconfont">&#xe6a8;</i>
             </div>
@@ -38,10 +40,12 @@
             <div class="about-liimgbox">
               <i class="iconfont">&#xe6a9;</i>
             </div>
-            <p>为住院患者提供优质、高效、专业的陪护服务</p>
+            <h5>宗旨</h5>
+            <p>护理员需要始终秉承“正直真诚、关爱尊重、凝聚合作、奉献社会”的服务宗旨。</p>
           </li>
           <li class="col-lg-3 col-md-3 col-xs-12 e-number">
-            <p>快康公司视员工为公司最重要的部分，为员工提供的不仅仅是吸引力强的薪资，还有新技能和获得新的资质以及公司管理层晋升机会</p>
+            <h5>理念</h5>
+            <p>坚持以病人为中心的“精诚、精心、精业”的“三精”护理服务理念。</p>
             <div class="about-liimgbox">
               <i class="iconfont">&#xe6aa;</i>
             </div>
@@ -109,7 +113,7 @@
             <h4 class="about-linkh4">
               <i class="iconfont">&#xe629;</i>公司电话</h4>
             <p class="about-linkp">
-              <span>0851-234567891</span>
+              <span>0851-86762587</span>
             </p>
           </li>
         </ul>
@@ -195,6 +199,14 @@ export default {
   line-height: 1.8rem;
   text-align: center;
   height: 100px;
+}
+.about-cultrue li h5 {
+  font-size: 2.2rem;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  padding:8px 0;
 }
 .about-liimgbox {
   text-align: center;
@@ -306,7 +318,7 @@ export default {
   color: #fff;
   line-height: 1.8rem;
   text-align: center;
-  height: 100px;
+  height: auto;
 }
 }
 </style>

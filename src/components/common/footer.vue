@@ -4,20 +4,20 @@
       <div class="row">
         <div class="footer-toplt col-lg-5 col-md-5 col-xs-12" ref="leftBox">
           <div class="compinfo">
-            <h2>深圳快康网络科技有限公司</h2>
-            <p>地址：贵州省贵阳市</p>
-            <p>电话：0851-12345678</p>
-            <p>邮箱：1109993204@qq.com</p>
+            <h2>深圳市快康网络技术有限公司</h2>
+            <p>地址：贵阳市云岩区新印厂路百灵阳光3004</p>
+            <p>电话：客服热线：96028-2、公司电话：0851-86762587</p>
+            <!-- <p>邮箱：1109993204@qq.com</p> -->
           </div>
           <div class="qrcodebox col-lg-12 col-md-12 col-xs-12">
             <p>微信公众号</p>
             <ul class=" col-lg-12 col-md-12 col-xs-12">
               <li class="qrcode col-lg-4 col-md-4 col-xs-5">
-                <img src="../../../static/img/qrcode.png">
+                <img src="../../../static/img/qrcode-kh.png">
                 <p>客户端</p>
               </li>
               <li class="qrcode col-lg-4 col-md-4 col-xs-5">
-                <img src="../../../static/img/qrcode.png">
+                <img src="../../../static/img/qrcode-hg.png">
                 <p>护工端</p>
               </li>
             </ul>
