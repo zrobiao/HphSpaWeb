@@ -14,6 +14,8 @@ const store = new Vuex.Store({
   state: {
       headings: '标题',
       flag: 0,
+      alternateUrl: 'https://www.kkpeihu.com'+ '/images/uploadsSystem/SysAdvert/', //轮播图路径
+      //alternateUrl: 'https://' + document.location.host + '/images/uploadsSystem/SysAdvert/', //轮播图路径
     },
     mutations: {
       token(state) {

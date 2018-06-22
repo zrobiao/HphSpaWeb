@@ -2,9 +2,9 @@
   <div>
     <section>
       <carousel :indicators="indicators" :controls="controls" :interval="interval" ref="carousel">
-        <slide v-for="(slide, index) in slides" :key="index">
+        <slide v-for="(slide, index) in advertImg" :key="index">
           <div style="width: 100%;" class="slider-box">
-            <img :src="slide.src">
+            <img :src="slide.advPicURL">
           </div>
         </slide>
         <template slot="indicators" slot-scope="props">
@@ -124,8 +124,9 @@
     </section>
   </div>
 </template>
-
 <script>
+import router from "./../router";
+import util from "./../js/util.js";
 export default {
   name: "app",
   components: {
@@ -146,13 +147,78 @@ export default {
           title: "滑动1",
           src: "../../static/img/index_banner.jpg"
         }
-      ]
+      ],
+      advertImg: [],
+      verifyBrowser:true,
     };
   },
-  methods: {},
+  methods: {
+    browserRedirect: function() {
+      var sUserAgent = navigator.userAgent.toLowerCase();
+      var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+      var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+      var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+      var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+      var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+      var bIsAndroid = sUserAgent.match(/android/i) == "android";
+      var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+      var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+      if (
+        bIsIpad ||
+        bIsIphoneOs ||
+        bIsMidp ||
+        bIsUc7 ||
+        bIsUc ||
+        bIsAndroid ||
+        bIsCE ||
+        bIsWM
+      ) {
+        console.log("移动端设备");
+        this.verifyBrowser=false
+      } else {
+        this.verifyBrowser=true
+        console.log("pc端设备");
+      }
+    },
+    getUserAdvertList: function() {
+      let _this = this;
+      console.log(_this.$store.state.alternateUrl)
+      if (_this.verifyBrowser) {
+        console.log("pc端设备");
+        util.Ajax("/api/sysAdvert/userHouseListPC?_method=GET", {}, function(
+          data
+        ) {
+          let advertData = data.data;
+          let advertItem = advertData.data;
+          console.log(advertItem);
+          for (var i in advertItem) {
+              // let ImgUrl = _this.WorkerIconChange(advertItem[i].advPicURL);
+            advertItem[i].advPicURL = _this.$store.state.alternateUrl+advertItem[i].advPicURL;
+            _this.advertImg.push(advertItem[i]);
+          }
+        });
+      }else{
+        console.log("移动端设备");
+        util.Ajax("/api/sysAdvert/userHouseListH5?_method=GET", {}, function(
+            data
+          ) {
+            let advertData = data.data;
+            let advertItem = advertData.data;
+            console.log(advertItem);
+            for (var i in advertItem) {
+              // let ImgUrl = _this.WorkerIconChange(advertItem[i].advPicURL);
+              advertItem[i].advPicURL = _this.$store.state.alternateUrl+advertItem[i].advPicURL;
+              _this.advertImg.push(advertItem[i]);
+            }
+          });
+      }
+    }
+  },
   created() {
     this.$store.state.flag = 0;
     document.title = "好陪护";
+    this.getUserAdvertList();
+    this.browserRedirect();
   },
   mounted() {
     let nursWidth = this.$refs.bignurs.offsetWidth;
@@ -169,14 +235,14 @@ export default {
 /* slides样式 */
 .slider-box {
   height: 500px;
-  display:flex;
-  display:-webkit-flex;
+  display: flex;
+  display: -webkit-flex;
   justify-content: center;
   align-items: center;
 }
 .slider-box img {
   height: 100%;
-  width:auto;
+  width: auto;
 }
 .custom-carousel-indicators li {
   margin: 0 8px;
@@ -215,8 +281,8 @@ export default {
   padding: 12px 0;
   margin: 20px 0 30px;
 }
-.content li{
-  margin-bottom:20px;
+.content li {
+  margin-bottom: 20px;
 }
 .index-libox {
   background: #f3f7fa;
@@ -331,15 +397,15 @@ export default {
     height: 300px;
   }
   /* 中间banner */
-.index-middle {
-  height: 100px;
-  background: url(./../../static/img/index_middle.jpg) center no-repeat;
-  /* background: #34b8de; */
-}
-.index-middle div {
-  font-size: 1.6rem;
-  color: #fff;
-  line-height: 100px;
-}
+  .index-middle {
+    height: 100px;
+    background: url(./../../static/img/index_middle.jpg) center no-repeat;
+    /* background: #34b8de; */
+  }
+  .index-middle div {
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: 100px;
+  }
 }
 </style>
