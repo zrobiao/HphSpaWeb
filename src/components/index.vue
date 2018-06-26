@@ -2,9 +2,10 @@
   <div>
     <section>
       <carousel :indicators="indicators" :controls="controls" :interval="interval" ref="carousel">
-        <slide v-for="(slide, index) in advertImg" :key="index">
+        <slide v-for="(slide, index) in slides" :key="index">
           <div style="width: 100%;" class="slider-box">
-            <img :src="slide.advPicURL">
+            <!-- <img :src="slide.advPicURL"> -->
+            <img :src="slide.src">
           </div>
         </slide>
         <template slot="indicators" slot-scope="props">
@@ -126,7 +127,7 @@
 </template>
 <script>
 import router from "./../router";
-import util from "./../js/util.js";
+import util from "./../js/util/util.js";
 export default {
   name: "app",
   components: {
@@ -145,7 +146,7 @@ export default {
       slides: [
         {
           title: "滑动1",
-          src: "../../static/img/index_banner.jpg"
+          src: "../../static/img/index/index_banner.jpg"
         }
       ],
       advertImg: [],
@@ -323,7 +324,7 @@ export default {
 /* 中间banner */
 .index-middle {
   height: 200px;
-  background: url(./../../static/img/index_middle.jpg) center no-repeat;
+  background: url(./../../static/img/index/index_middle.jpg) center no-repeat;
 }
 .index-middle div {
   font-size: 2rem;
@@ -356,13 +357,13 @@ export default {
   bottom: 20px;
 }
 .nurs-zybg {
-  background: url(./../../static/img/index_worker01.jpg) center no-repeat;
+  background: url(./../../static/img/index/index_worker01.jpg) center no-repeat;
 }
 .nurs-hlbg {
-  background: url(./../../static/img/index_worker02.jpg) center no-repeat;
+  background: url(./../../static/img/index/index_worker02.jpg) center no-repeat;
 }
 .nurs-jmbg {
-  background: url(./../../static/img/index_worker03.jpg) center no-repeat;
+  background: url(./../../static/img/index/index_worker03.jpg) center no-repeat;
 }
 /* 便捷入口 */
 .ent-content {
@@ -399,8 +400,6 @@ export default {
   /* 中间banner */
   .index-middle {
     height: 100px;
-    background: url(./../../static/img/index_middle.jpg) center no-repeat;
-    /* background: #34b8de; */
   }
   .index-middle div {
     font-size: 1.6rem;

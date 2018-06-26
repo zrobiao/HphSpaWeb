@@ -49,16 +49,19 @@ export default {
     prePage () {
       // 上一页
       this.current--
+      this.$emit('addCurrent',this.current--)
     },
     nextPage () {
       // 下一页
       this.current++
+      this.$emit('addCurrent',this.current++)
     },
     goPage (index) {
       // 跳转到相应页面
       if (index !== this.current) {
         this.current = index
       }
+      this.$emit('addCurrent',this.current)
     }
   },
   computed: {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="top-banner">
-      <img src="../../static/img/aboutUs_banner.jpg">
+      <img src="../../static/img/index/aboutUs_banner.jpg">
     </section>
     <section class="about-infocontent">
       <div class="index-titlebox">
@@ -11,7 +11,7 @@
       <div class="container about-infobox">
         <p>深圳市快康网络技术有限公司成立于2016年初，是全国最早从事护理行业互联网+的公司之一。<br>公司自主打造的“好陪护”平台旨在对客户提供更便捷、更舒适、更贴心、更专业的护理服务。同时，公司给加盟护工提供职业培训以及更好的工作机会。</p>
         <div class="about-imgbanner">
-          <img src="../assets/aboutUs_middle.jpg" class="img-responsive">
+          <img src="../../static/img/index/aboutUs_middle.jpg" class="img-responsive">
         </div>
       </div>
     </section>
@@ -83,7 +83,7 @@
               <h5>加盟护工</h5>
               <div class="job-txtbox">
                 <p>地点：贵州贵阳</p>
-                <button type="button" v-on:click="go('/infoList/Detail',3,3)">加入我们</button>
+                <button type="button" v-on:click="go('/website/Detail',3,3)">加入我们</button>
               </div>
             </div>
           </li>

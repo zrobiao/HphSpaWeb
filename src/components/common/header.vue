@@ -2,7 +2,7 @@
   <header class="navbar-fixed-top">
     <navbar class="container hph-navbar">
       <a class="navbar-brand logo-link" slot="brand" href="index.html">
-        <img src="../../assets/logo.png" class="img-responsive">
+        <img src="../../../static/img/index/logo.png" class="img-responsive">
       </a>
       <template slot="collapse">
         <navbar-nav right>
@@ -19,10 +19,10 @@ export default {
   data () {
     return {
       menuItems:[
-      {title:'首页',tablink:'/Index'},
-      {title:'健康资源',tablink:'/healthInfo'},
-      {title:'资讯',tablink:'/infoList'},
-      {title:'关于我们',tablink:'/aboutUs'},
+      {title:'首页',tablink:'/website/Index'},
+      {title:'健康资源',tablink:'/website/healthInfo'},
+      {title:'资讯',tablink:'/website/infoList'},
+      {title:'关于我们',tablink:'/website/aboutUs'},
       ],
       flag:this.$store.state.flag,
     }

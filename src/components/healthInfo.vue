@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="top-banner">
-      <img src="../../static/img/HeathAbout_banner.jpg">
+      <img src="../../static/img/index/HeathAbout_banner.jpg">
     </section>
     <section class="info-content">
       <!-- <div class="index-titlebox">

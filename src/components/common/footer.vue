@@ -13,11 +13,11 @@
             <p>微信公众号</p>
             <ul class=" col-lg-12 col-md-12 col-xs-12">
               <li class="qrcode col-lg-4 col-md-4 col-xs-5">
-                <img src="../../../static/img/qrcode-kh.png">
+                <img src="../../../static/img/index/qrcode-kh.png">
                 <p>客户端</p>
               </li>
               <li class="qrcode col-lg-4 col-md-4 col-xs-5">
-                <img src="../../../static/img/qrcode-hg.png">
+                <img src="../../../static/img/index/qrcode-hg.png">
                 <p>护工端</p>
               </li>
             </ul>
@@ -36,7 +36,7 @@
   </footer>
 </template>
 <script>
-import "../../assets/bootstrap/css/bootstrap.min.css"
+// import "../../css/bootstrap/css/bootstrap.min.css"
 import Amap from './map.vue'
 export default {
   data() {
