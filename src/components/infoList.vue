@@ -29,6 +29,7 @@
       </ul>
       <page-nation :page-no="PageTotal" :current.sync="currentPage" @addCurrent="PageLisen"></page-nation>
     </section>
+    <loading :dot-color-val="dotColor" :dot-nums="dotNums" :loading-radius-val="loadingRadius" :dot-radius-val="dotRadius" :style="changeStyle"></loading>
   </div>
 </template>
 
@@ -36,13 +37,14 @@
 import router from '../router/index.js'
 import util from "./../js/util.js";
 import PageNation from './common/Pagination.vue'
+import Loading from './common/Loading.vue'
 export default {
   name: "app",
-  components: {PageNation},
+  components: {PageNation,Loading},
   created() {
     this.$store.state.flag = 2;
     document.title = '资讯'
-    this.getListData()
+    //this.getListData()
   },
   watch:{
     currentPage:'requstData'
@@ -54,8 +56,20 @@ export default {
       Page:1,
       Limit:10,
       consultItems:[],
-      PageTotal:1
+      PageTotal:1,
+      dotColor:'#ff3366',
+      dotNums:12,
+      loadingRadius:168,
+      dotRadius:20,
     };
+  },
+  computed:{
+    changeStyle:function(){
+      let rootEle = document.documentElement;
+      rootEle.style.setProperty('--loadingRadius','${this.loadingRadius}px')
+      rootEle.style.setProperty('--dotRadius','${this.dotRadius}px')
+      rootEle.style.setProperty('--dotColor',this.dotColor)
+    }
   },
   methods:{
     go:function(url,flag,data){

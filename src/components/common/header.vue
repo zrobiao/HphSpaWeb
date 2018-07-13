@@ -19,10 +19,10 @@ export default {
   data () {
     return {
       menuItems:[
-      {title:'首页',tablink:'/website/Index'},
-      {title:'健康资源',tablink:'/website/healthInfo'},
-      {title:'资讯',tablink:'/website/infoList'},
-      {title:'关于我们',tablink:'/website/aboutUs'},
+      {title:'首页',tablink:'/Index'},
+      {title:'健康资源',tablink:'/healthInfo'},
+      {title:'资讯',tablink:'/infoList'},
+      {title:'关于我们',tablink:'/aboutUs'},
       ],
       flag:this.$store.state.flag,
     }
