@@ -2,7 +2,7 @@
   <header class="navbar-fixed-top">
     <navbar class="container hph-navbar">
       <a class="navbar-brand logo-link" slot="brand" href="index.html">
-        <img src="../../../static/img/index/logo.png" class="img-responsive">
+        <img src="../../../static/img/logo.png" class="img-responsive">
       </a>
       <template slot="collapse">
         <navbar-nav right>

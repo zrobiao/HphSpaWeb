@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="top-banner">
-      <img src="../../static/img/index/detailPage_banner.jpg">
+      <img src="../../static/img/detailPage_banner.jpg">
     </section>
     <section class="container list-title">
       <h1>
@@ -34,7 +34,7 @@
 
 <script>
 import router from '../router/index.js'
-import util from "./../js/util/util.js";
+import util from "./../js/util.js";
 import PageNation from './common/Pagination.vue'
 export default {
   name: "app",

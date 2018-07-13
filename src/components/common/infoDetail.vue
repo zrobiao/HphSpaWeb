@@ -1,8 +1,8 @@
 <template>
   <div>
     <section class="top-banner">
-      <img src="../../../static/img/index/detailPage_banner.jpg" v-if="this.$route.query.flag=='2'">
-      <img src="../../../static/img/index/aboutUs_banner.jpg" v-if="this.$route.query.flag=='3'">
+      <img src="../../../static/img/detailPage_banner.jpg" v-if="this.$route.query.flag=='2'">
+      <img src="../../../static/img/aboutUs_banner.jpg" v-if="this.$route.query.flag=='3'">
     </section>
     <div class="container detail-content">
       <ul class="row">
@@ -25,7 +25,7 @@
 </template>
 <script>
 import router from '../../router/index.js'
-import util from "./../../js/util/util.js";
+import util from "./../../js/util.js";
 export default {
   data(){
     return{

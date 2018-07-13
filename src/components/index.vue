@@ -127,7 +127,7 @@
 </template>
 <script>
 import router from "./../router";
-import util from "./../js/util/util.js";
+import util from "./../js/util.js";
 export default {
   name: "app",
   components: {
@@ -146,7 +146,7 @@ export default {
       slides: [
         {
           title: "滑动1",
-          src: "../../static/img/index/index_banner.jpg"
+          src: "../../static/img/index_banner.jpg"
         }
       ],
       advertImg: [],
@@ -324,7 +324,7 @@ export default {
 /* 中间banner */
 .index-middle {
   height: 200px;
-  background: url(./../../static/img/index/index_middle.jpg) center no-repeat;
+  background: url(./../../static/img/index_middle.jpg) center no-repeat;
 }
 .index-middle div {
   font-size: 2rem;
@@ -357,13 +357,13 @@ export default {
   bottom: 20px;
 }
 .nurs-zybg {
-  background: url(./../../static/img/index/index_worker01.jpg) center no-repeat;
+  background: url(./../../static/img/index_worker01.jpg) center no-repeat;
 }
 .nurs-hlbg {
-  background: url(./../../static/img/index/index_worker02.jpg) center no-repeat;
+  background: url(./../../static/img/index_worker02.jpg) center no-repeat;
 }
 .nurs-jmbg {
-  background: url(./../../static/img/index/index_worker03.jpg) center no-repeat;
+  background: url(./../../static/img/index_worker03.jpg) center no-repeat;
 }
 /* 便捷入口 */
 .ent-content {
